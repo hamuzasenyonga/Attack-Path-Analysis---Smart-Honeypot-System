@@ -1,0 +1,5 @@
+type,severity,source,country,protocol,packets,timestamp,status
+DNS Amplification,Medium,59.192.246.51,China (CN),DNS,"333,231",05:33:26 PM,Blocked
+SYN Flood,Medium,73.72.75.126,Netherlands (NL),TCP,"456,789",05:33:15 PM,Blocked
+HTTP Flood,High,95.38.165.1,United Kingdom (GB),HTTP,"355,177",05:32:58 PM,Active
+UDP Flood,Critical,91.234.123.45,Brazil (BR),UDP,"1,234,567",05:32:42 PM,Blocked

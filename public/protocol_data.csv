@@ -1,0 +1,5 @@
+name,value,color
+UDP,25,#14B8A6
+TCP,25,#3B82F6
+HTTP,23,#8B5CF6
+DNS,26,#EC4899

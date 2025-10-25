@@ -9,209 +9,71 @@ import {
   FunnelIcon
 } from '@heroicons/react/24/outline';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell } from 'recharts';
+import { fetchCSVData } from '@/utils/csvParser';
 
-// Mock data
-const attackData = [
-  { time: '22:00', critical: 0, high: 0, medium: 0 },
-  { time: '23:00', critical: 0, high: 0, medium: 0 },
-  { time: '00:00', critical: 0, high: 0, medium: 0 },
-  { time: '01:00', critical: 0, high: 0, medium: 0 },
-  { time: '02:00', critical: 0, high: 0, medium: 0 },
-  { time: '03:00', critical: 0, high: 0, medium: 0 },
-  { time: '04:00', critical: 0, high: 0, medium: 0 },
-  { time: '05:00', critical: 0, high: 0, medium: 0 },
-  { time: '06:00', critical: 0, high: 0, medium: 0 },
-  { time: '07:00', critical: 0, high: 0, medium: 0 },
-  { time: '08:00', critical: 0, high: 0, medium: 0 },
-  { time: '09:00', critical: 0, high: 0, medium: 0 },
-  { time: '10:00', critical: 0, high: 0, medium: 0 },
-  { time: '11:00', critical: 0, high: 0, medium: 0 },
-  { time: '12:00', critical: 0, high: 0, medium: 0 },
-  { time: '13:00', critical: 0, high: 0, medium: 0 },
-  { time: '14:00', critical: 0, high: 0, medium: 0 },
-  { time: '15:00', critical: 0, high: 0, medium: 0 },
-  { time: '16:00', critical: 0, high: 0, medium: 0 },
-  { time: '17:00', critical: 0, high: 0, medium: 0 },
-  { time: '18:00', critical: 0, high: 0, medium: 0 },
-  { time: '19:00', critical: 5, high: 15, medium: 25 },
-  { time: '20:00', critical: 12, high: 35, medium: 60 },
-  { time: '21:00', critical: 18, high: 45, medium: 80 }
-];
-
-const attackTypesData = [
-  { name: 'UDP', value: 110 },
-  { name: 'SYN', value: 105 },
-  { name: 'HTTP', value: 108 },
-  { name: 'DNS', value: 112 }
-];
-
-const protocolData = [
-  { name: 'UDP', value: 25, color: '#14B8A6' },
-  { name: 'TCP', value: 25, color: '#3B82F6' },
-  { name: 'HTTP', value: 23, color: '#8B5CF6' },
-  { name: 'DNS', value: 26, color: '#EC4899' }
-];
-
-const countryData = [
-  { country: 'FR', value: 55 },
-  { country: 'CN', value: 52 },
-  { country: 'BR', value: 50 },
-  { country: 'RU', value: 48 },
-  { country: 'IN', value: 46 },
-  { country: 'UA', value: 44 },
-  { country: 'NL', value: 40 },
-  { country: 'DE', value: 35 }
-];
-
-const historicalData = [
-  {
-    timestamp: 'Oct 11, 05:35 PM',
-    sourceIP: '84.164.156.237',
-    country: 'CN',
-    attackType: 'SYN Flood',
-    protocol: 'TCP',
-    severity: 'Medium',
-    packets: '667,436',
-    status: 'Blocked'
-  },
-  {
-    timestamp: 'Oct 11, 05:35 PM',
-    sourceIP: '95.38.165.1',
-    country: 'GB',
-    attackType: 'HTTP Flood',
-    protocol: 'HTTP',
-    severity: 'High',
-    packets: '355,177',
-    status: 'Active'
-  },
-  {
-    timestamp: 'Oct 11, 05:34 PM',
-    sourceIP: '21.170.210.175',
-    country: 'RU',
-    attackType: 'HTTP Flood',
-    protocol: 'HTTP',
-    severity: 'Low',
-    packets: '743,192',
-    status: 'Blocked'
-  },
-  {
-    timestamp: 'Oct 11, 05:34 PM',
-    sourceIP: '29.135.175.143',
-    country: 'RU',
-    attackType: 'SYN Flood',
-    protocol: 'TCP',
-    severity: 'High',
-    packets: '988,521',
-    status: 'Blocked'
-  },
-  {
-    timestamp: 'Oct 11, 05:33 PM',
-    sourceIP: '59.192.246.51',
-    country: 'CN',
-    attackType: 'DNS Amplification',
-    protocol: 'DNS',
-    severity: 'Medium',
-    packets: '333,231',
-    status: 'Blocked'
-  },
-  {
-    timestamp: 'Oct 11, 05:33 PM',
-    sourceIP: '73.72.75.126',
-    country: 'NL',
-    attackType: 'SYN Flood',
-    protocol: 'TCP',
-    severity: 'Medium',
-    packets: '456,789',
-    status: 'Blocked'
-  },
-  {
-    timestamp: 'Oct 11, 05:32 PM',
-    sourceIP: '91.234.123.45',
-    country: 'BR',
-    attackType: 'UDP Flood',
-    protocol: 'UDP',
-    severity: 'Critical',
-    packets: '1,234,567',
-    status: 'Blocked'
-  },
-  {
-    timestamp: 'Oct 11, 05:32 PM',
-    sourceIP: '45.67.89.123',
-    country: 'DE',
-    attackType: 'HTTP Flood',
-    protocol: 'HTTP',
-    severity: 'Low',
-    packets: '234,567',
-    status: 'Blocked'
-  },
-  {
-    timestamp: 'Oct 11, 05:31 PM',
-    sourceIP: '78.90.123.456',
-    country: 'FR',
-    attackType: 'DNS Amplification',
-    protocol: 'DNS',
-    severity: 'High',
-    packets: '789,012',
-    status: 'Blocked'
-  },
-  {
-    timestamp: 'Oct 11, 05:31 PM',
-    sourceIP: '12.34.56.78',
-    country: 'US',
-    attackType: 'SYN Flood',
-    protocol: 'TCP',
-    severity: 'Medium',
-    packets: '567,890',
-    status: 'Blocked'
-  }
-];
-
-const liveAttackFeed = [
-  {
-    type: 'DNS Amplification',
-    severity: 'Medium',
-    source: '59.192.246.51',
-    country: 'China (CN)',
-    protocol: 'DNS',
-    packets: '333,231',
-    timestamp: '05:33:26 PM',
-    status: 'Blocked'
-  },
-  {
-    type: 'SYN Flood',
-    severity: 'Medium',
-    source: '73.72.75.126',
-    country: 'Netherlands (NL)',
-    protocol: 'TCP',
-    packets: '456,789',
-    timestamp: '05:33:15 PM',
-    status: 'Blocked'
-  },
-  {
-    type: 'HTTP Flood',
-    severity: 'High',
-    source: '95.38.165.1',
-    country: 'United Kingdom (GB)',
-    protocol: 'HTTP',
-    packets: '355,177',
-    timestamp: '05:32:58 PM',
-    status: 'Active'
-  },
-  {
-    type: 'UDP Flood',
-    severity: 'Critical',
-    source: '91.234.123.45',
-    country: 'Brazil (BR)',
-    protocol: 'UDP',
-    packets: '1,234,567',
-    timestamp: '05:32:42 PM',
-    status: 'Blocked'
-  }
-];
+// Data state variables
 
 export default function Dashboard() {
   const [selectedSeverity, setSelectedSeverity] = useState('All Severity');
   const [selectedType, setSelectedType] = useState('All Types');
+  
+  // Data state variables
+  const [attackData, setAttackData] = useState([]);
+  const [attackTypesData, setAttackTypesData] = useState([]);
+  const [protocolData, setProtocolData] = useState([]);
+  const [countryData, setCountryData] = useState([]);
+  const [historicalData, setHistoricalData] = useState([]);
+  const [liveAttackFeed, setLiveAttackFeed] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  // Load CSV data function
+  const loadData = async () => {
+    try {
+      setLoading(true);
+      
+      // Load all CSV files in parallel
+      const [
+        attackDataResult,
+        attackTypesResult,
+        protocolResult,
+        countryResult,
+        historicalResult,
+        liveFeedResult
+      ] = await Promise.all([
+        fetchCSVData('attack_data.csv'),
+        fetchCSVData('attack_types.csv'),
+        fetchCSVData('protocol_data.csv'),
+        fetchCSVData('country_data.csv'),
+        fetchCSVData('historical_data.csv'),
+        fetchCSVData('live_attack_feed.csv')
+      ]);
+
+      console.log('Loaded data:', {
+        attackData: attackDataResult,
+        attackTypes: attackTypesResult,
+        protocol: protocolResult,
+        country: countryResult,
+        historical: historicalResult,
+        liveFeed: liveFeedResult
+      });
+
+      setAttackData(attackDataResult);
+      setAttackTypesData(attackTypesResult);
+      setProtocolData(protocolResult);
+      setCountryData(countryResult);
+      setHistoricalData(historicalResult);
+      setLiveAttackFeed(liveFeedResult);
+    } catch (error) {
+      console.error('Error loading data:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Load CSV data on component mount
+  useEffect(() => {
+    loadData();
+  }, []);
 
   const getSeverityColor = (severity) => {
     switch (severity) {
@@ -241,6 +103,17 @@ export default function Dashboard() {
     }
   };
 
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-500 mx-auto mb-4"></div>
+          <p className="text-gray-400">Loading attack data...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       {/* Header */}
@@ -256,9 +129,12 @@ export default function Dashboard() {
             </div>
           </div>
           <div className="flex space-x-3">
-            <button className="flex items-center space-x-2 bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-lg transition-colors">
+            <button 
+              onClick={loadData}
+              className="flex items-center space-x-2 bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-lg transition-colors"
+            >
               <ChartBarIcon className="w-5 h-5" />
-              <span>Generate Data</span>
+              <span>Refresh Data</span>
             </button>
             <button className="flex items-center space-x-2 bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg transition-colors">
               <ArrowDownTrayIcon className="w-5 h-5" />
