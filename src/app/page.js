@@ -284,7 +284,7 @@ export default function Dashboard() {
             </div>
             <div>
               <h1 className="text-2xl font-bold">Analyst Dashboard</h1>
-              <p className="text-gray-400">Centralize intelligence for effective monitoring and response.</p>
+              <p className="text-gray-400">Centralized intelligence for effective monitoring and response.</p>
             </div>
           </div>
             <div className="flex space-x-3">
@@ -400,11 +400,11 @@ export default function Dashboard() {
                     <p>Protocol: {attack.protocol}</p>
                     <p>Packets: {attack.packets}</p>
                     <p>Time: {attack.timestamp}</p>
-                    <div className="flex items-center justify-between mt-2">
+                    {/* <div className="flex items-center justify-between mt-2">
                       <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(attack.status)}`}>
                         {attack.status}
                       </span>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               ))}
@@ -632,13 +632,13 @@ export default function Dashboard() {
                               </div>
                             )}
                           </div>
-                          {attack.status && (
+                          {/* {attack.status && (
                             <div className="mt-2">
                               <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(attack.status)}`}>
                                 {attack.status}
                               </span>
                             </div>
-                          )}
+                          )} */}
                         </div>
                       </div>
                     </div>
@@ -721,7 +721,7 @@ export default function Dashboard() {
                   <th className="text-left py-3 px-4 font-medium text-gray-300">Severity</th>
                   <th className="text-left py-3 px-4 font-medium text-gray-300">Packets</th>
                   <th className="text-left py-3 px-4 font-medium text-gray-300">Status</th>
-                  <th className="text-left py-3 px-4 font-medium text-gray-300">Actions</th>
+                  {/* <th className="text-left py-3 px-4 font-medium text-gray-300">Actions</th> */}
                 </tr>
               </thead>
               <tbody>
@@ -756,13 +756,13 @@ export default function Dashboard() {
                           {row.status}
                         </span>
                       </td>
-                      <td className="py-3 px-4 text-sm">
+                      {/* <td className="py-3 px-4 text-sm">
                         <button className="text-gray-400 hover:text-white">
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                           </svg>
                         </button>
-                      </td>
+                      </td> */}
                     </tr>
                   ))
                 )}
