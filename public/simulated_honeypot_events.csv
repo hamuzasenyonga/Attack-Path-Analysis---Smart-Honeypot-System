@@ -1,0 +1,301 @@
+timestamp,src_ip,src_port,dst_ip,dst_port,protocol,bytes,tcp_flags,signature_id,payload_trace,http_method,url,user_agent,ssh_user,ssh_result,rdp_result,session_id,event_type,label
+2025-10-01T00:04:41,192.168.4.146,54881,192.168.50.10,80,TCP,867,P,,,POST,/api,Mozilla/5.0,,,,ben-4456,benign,benign
+2025-10-01T00:34:47,192.168.10.244,33741,192.168.50.11,8080,UDP,449,,,,POST,/home,curl/7.68.0,,,,ben-3287,benign,benign
+2025-10-01T00:47:57,192.168.4.146,29101,192.168.16.209,22,UDP,2126,P,,,POST,/home,Mozilla/5.0,,,,ben-9348,benign,benign
+2025-10-01T00:57:05,172.16.2.9,52933,10.0.9.201,25,TCP,1220,P,,,,/,curl/7.68.0,,,,ben-7252,benign,benign
+2025-10-01T00:58:47,10.0.6.119,45607,192.168.50.14,25,TCP,455,A,,,,/api,python-requests/2.31.0,,,,ben-6573,benign,benign
+2025-10-01T01:00:28,58.36.86.222,64717,192.168.50.11,22,SSH,317,F,SIG_RDP_BRUTE,RDP auth failure sequence,,,,,,,attk-0001,other_malicious,attack
+2025-10-01T01:01:04,10.0.23.178,50995,192.168.50.11,443,HTTP,951,,,,,/,python-requests/2.31.0,,,,ben-6310,benign,benign
+2025-10-01T01:21:11,10.0.35.236,16809,192.168.50.11,22,TCP,442,A,,,GET,,Mozilla/5.0,,,,ben-9727,benign,benign
+2025-10-01T01:30:23,10.0.34.225,18394,192.168.50.14,22,TCP,1351,,,,POST,/home,python-requests/2.31.0,,,,ben-4295,benign,benign
+2025-10-01T01:42:41,192.168.12.79,30612,192.168.50.13,80,UDP,364,A,,,GET,/,curl/7.68.0,,,,ben-1344,benign,benign
+2025-10-01T01:42:54,10.0.13.200,47413,192.168.50.10,25,TCP,771,A,,,GET,/,Mozilla/5.0,,,,ben-6413,benign,benign
+2025-10-01T02:17:56,190.214.64.251,36363,192.168.50.12,80,HTTP,1280,P,SIG_RDP_BRUTE,RDP auth failure sequence,,,,,,,attk-0002,other_malicious,attack
+2025-10-01T02:35:48,172.16.17.203,44211,192.168.50.10,8080,TCP,1142,P,,,POST,,curl/7.68.0,,,,ben-1887,benign,benign
+2025-10-01T02:38:11,192.168.38.136,53491,10.0.25.197,3306,HTTP,1359,A,,,GET,/home,Mozilla/5.0,,,,ben-9786,benign,benign
+2025-10-01T02:40:11,10.0.14.150,58334,192.168.50.13,80,TCP,119,P,,,,/,Mozilla/5.0,,,,ben-9856,benign,benign
+2025-10-01T02:42:13,10.0.14.228,32570,192.168.50.13,443,HTTP,639,P,,,GET,/home,curl/7.68.0,,,,ben-1035,benign,benign
+2025-10-01T02:45:51,10.0.24.81,63762,192.168.50.13,25,UDP,555,,,,,,Mozilla/5.0,,,,ben-4111,benign,benign
+2025-10-01T02:53:17,172.16.2.9,21576,192.168.50.10,80,UDP,448,A,,,,,python-requests/2.31.0,,,,ben-9701,benign,benign
+2025-10-01T02:58:56,29.128.49.127,45274,192.168.50.11,23,TCP,112,A,SIG_SCAN_TCP_SYN,,,,,,,,attk-0003,scan,attack
+2025-10-01T03:02:23,10.0.37.203,39275,192.168.50.13,22,UDP,1899,,,,POST,/api,Mozilla/5.0,,,,ben-6147,benign,benign
+2025-10-01T03:11:51,192.168.12.79,61908,192.168.50.13,3306,HTTP,1082,A,,,GET,,python-requests/2.31.0,,,,ben-2638,benign,benign
+2025-10-01T03:13:21,190.214.64.251,58647,192.168.50.14,23,TCP,120,,SIG_SSH_BRUTE,ssh auth failure,,,,ubuntu,failed,,attk-0004,brute_force,attack
+2025-10-01T03:16:48,172.16.13.105,7812,192.168.50.12,443,UDP,83,P,,,GET,/,python-requests/2.31.0,,,,ben-3546,benign,benign
+2025-10-01T03:21:22,10.0.29.150,42589,192.168.50.11,3306,UDP,1390,P,,,,,curl/7.68.0,,,,ben-1832,benign,benign
+2025-10-01T03:27:27,58.36.86.222,42777,192.168.50.12,80,HTTP,117824,,SIG_EXFIL_HTTP,POST exfiltration to unknown domain with large payload -- transfer of binary-like payload observed,POST,/upload,Mozilla/5.0 (compatible),,,,attk-0001,data_exfiltration,attack
+2025-10-01T03:42:50,192.168.4.146,60263,192.168.50.10,443,UDP,2113,,,,GET,/api,python-requests/2.31.0,,,,ben-3426,benign,benign
+2025-10-01T03:45:04,10.0.37.203,14791,192.168.50.10,25,HTTP,1459,A,,,,/,curl/7.68.0,,,,ben-7658,benign,benign
+2025-10-01T03:52:17,172.16.14.28,2648,192.168.50.11,443,HTTP,151,,,,POST,,python-requests/2.31.0,,,,ben-5065,benign,benign
+2025-10-01T04:01:15,192.168.38.136,14103,192.168.50.13,3306,TCP,549,P,,,POST,/api,Mozilla/5.0,,,,ben-4652,benign,benign
+2025-10-01T04:01:44,190.214.64.251,24036,192.168.50.13,22,SSH,142565,F,SIG_EXFIL_HTTP,POST exfiltration to unknown domain with large payload -- transfer of binary-like payload observed,POST,/upload,Mozilla/5.0 (compatible),,,,attk-0005,data_exfiltration,attack
+2025-10-01T04:11:05,10.0.35.236,3531,192.168.50.14,80,HTTP,1600,,,,POST,/api,python-requests/2.31.0,,,,ben-6139,benign,benign
+2025-10-01T04:12:57,10.0.23.178,17717,192.168.50.14,80,TCP,415,,,,POST,/,python-requests/2.31.0,,,,ben-9821,benign,benign
+2025-10-01T04:13:38,10.0.27.13,61367,192.168.50.10,53,UDP,1106,,,,POST,/,python-requests/2.31.0,,,,ben-5920,benign,benign
+2025-10-01T04:43:22,192.168.4.116,37357,172.16.25.193,443,HTTP,1304,A,,,POST,,python-requests/2.31.0,,,,ben-3851,benign,benign
+2025-10-01T05:17:04,172.16.2.200,19827,192.168.50.10,443,HTTP,283,P,,,,/api,curl/7.68.0,,,,ben-8238,benign,benign
+2025-10-01T05:33:36,172.16.17.201,44202,192.168.30.73,80,TCP,804,P,,,,/api,Mozilla/5.0,,,,ben-4848,benign,benign
+2025-10-01T05:37:14,10.0.13.200,17070,192.168.50.10,8080,TCP,1184,,,,GET,,curl/7.68.0,,,,ben-4185,benign,benign
+2025-10-01T05:38:15,192.168.23.38,44019,192.168.50.11,25,TCP,225,A,,,GET,,Mozilla/5.0,,,,ben-3881,benign,benign
+2025-10-01T05:49:47,172.16.13.105,61151,192.168.50.14,3306,TCP,688,A,,,POST,/home,curl/7.68.0,,,,ben-9702,benign,benign
+2025-10-01T05:55:35,10.0.29.150,59483,192.168.50.14,22,UDP,91,P,,,,,Mozilla/5.0,,,,ben-8777,benign,benign
+2025-10-01T05:56:53,172.16.6.139,42098,192.168.50.14,443,HTTP,1819,P,,,POST,/,python-requests/2.31.0,,,,ben-5681,benign,benign
+2025-10-01T06:03:43,192.168.7.254,10908,192.168.50.10,443,TCP,98,P,,,,/home,python-requests/2.31.0,,,,ben-4505,benign,benign
+2025-10-01T06:04:04,58.36.86.222,55608,192.168.50.12,80,HTTP,2592,P,SIG_CMD_INJECT,"Command injection pattern in URL or payload || example payload fragment: ""' OR '1'='1'""",GET,/admin?q=' OR '1'='1',sqlmap/1.6,,,,attk-0001,exploit_attempt,attack
+2025-10-01T06:28:04,172.16.5.12,50013,192.168.50.13,25,UDP,575,,,,,/home,curl/7.68.0,,,,ben-4595,benign,benign
+2025-10-01T06:31:04,172.16.23.90,45532,192.168.50.12,3306,UDP,918,P,,,,/home,curl/7.68.0,,,,ben-3091,benign,benign
+2025-10-01T06:41:56,192.168.17.23,44474,192.168.50.14,80,UDP,1704,A,,,,,Mozilla/5.0,,,,ben-8564,benign,benign
+2025-10-01T06:45:40,10.0.24.81,22444,192.168.50.11,53,HTTP,101,P,,,POST,,curl/7.68.0,,,,ben-2341,benign,benign
+2025-10-01T06:53:00,192.168.17.23,5520,192.168.50.11,3306,UDP,1537,,,,GET,/,Mozilla/5.0,,,,ben-4266,benign,benign
+2025-10-01T07:00:55,172.16.17.71,44897,192.168.50.11,80,HTTP,846,,,,GET,,python-requests/2.31.0,,,,ben-5198,benign,benign
+2025-10-01T07:02:58,172.16.37.183,8530,192.168.38.222,3306,UDP,251,A,,,POST,/,python-requests/2.31.0,,,,ben-1420,benign,benign
+2025-10-01T07:37:54,192.168.10.244,14021,192.168.50.13,80,UDP,1117,,,,,/home,Mozilla/5.0,,,,ben-5941,benign,benign
+2025-10-01T07:52:49,10.0.29.150,35937,192.168.50.10,8080,HTTP,959,,,,POST,/,python-requests/2.31.0,,,,ben-6590,benign,benign
+2025-10-01T08:20:52,58.36.86.222,47378,192.168.50.13,3389,RDP,2337,P,SIG_HTTP_SQLI,"HTTP payload includes SQLi pattern: ' OR '1'='1 || example payload fragment: ""' OR '1'='1'""",POST,/download?q=' OR '1'='1',sqlmap/1.6,,,,attk-0006,exploit_attempt,attack
+2025-10-01T08:43:23,192.168.15.171,19303,192.168.50.11,8080,TCP,479,A,,,POST,,curl/7.68.0,,,,ben-1470,benign,benign
+2025-10-01T08:52:30,192.168.29.104,53310,192.168.50.11,53,HTTP,881,P,,,POST,/api,python-requests/2.31.0,,,,ben-1166,benign,benign
+2025-10-01T09:18:00,10.0.27.13,33043,10.0.15.115,22,HTTP,608,A,,,,,python-requests/2.31.0,,,,ben-9041,benign,benign
+2025-10-01T09:18:55,192.168.34.232,46360,192.168.50.11,443,HTTP,908,P,,,,/api,curl/7.68.0,,,,ben-9698,benign,benign
+2025-10-01T09:21:06,192.168.4.146,18778,172.16.22.133,53,HTTP,1237,P,,,GET,/,python-requests/2.31.0,,,,ben-4155,benign,benign
+2025-10-01T09:21:34,192.168.17.23,49429,192.168.50.11,8080,TCP,1791,P,,,,/api,Mozilla/5.0,,,,ben-4180,benign,benign
+2025-10-01T09:25:30,192.168.18.196,36029,192.168.50.10,443,UDP,97,P,,,GET,/,python-requests/2.31.0,,,,ben-5786,benign,benign
+2025-10-01T09:30:25,10.0.34.225,38645,192.168.50.10,53,TCP,2119,P,,,POST,,curl/7.68.0,,,,ben-4020,benign,benign
+2025-10-01T09:33:35,10.0.24.81,33251,192.168.50.10,80,HTTP,411,,,,,/,Mozilla/5.0,,,,ben-3444,benign,benign
+2025-10-01T09:51:14,172.16.2.200,51122,192.168.50.10,8080,UDP,748,,,,,/home,python-requests/2.31.0,,,,ben-7232,benign,benign
+2025-10-01T09:55:39,172.16.5.28,38289,192.168.50.13,22,HTTP,1192,A,,,,/,Mozilla/5.0,,,,ben-4457,benign,benign
+2025-10-01T09:58:56,10.0.14.228,5943,192.168.50.11,443,UDP,1008,A,,,POST,,python-requests/2.31.0,,,,ben-8699,benign,benign
+2025-10-01T10:06:46,10.0.13.200,5688,172.16.18.25,25,HTTP,466,A,,,POST,/home,curl/7.68.0,,,,ben-2880,benign,benign
+2025-10-01T10:08:17,172.16.14.28,11897,192.168.50.10,3306,TCP,715,P,,,,/api,curl/7.68.0,,,,ben-3037,benign,benign
+2025-10-01T10:24:29,172.16.2.200,36412,192.168.50.12,8080,UDP,544,P,,,GET,/,curl/7.68.0,,,,ben-6280,benign,benign
+2025-10-01T10:25:16,192.168.34.232,39501,10.0.14.167,80,UDP,486,,,,POST,/,Mozilla/5.0,,,,ben-8708,benign,benign
+2025-10-01T11:08:36,172.16.5.28,42625,192.168.50.14,3306,HTTP,1349,P,,,GET,,curl/7.68.0,,,,ben-7690,benign,benign
+2025-10-01T11:23:24,192.168.38.136,33495,192.168.50.13,53,UDP,1054,,,,POST,/,curl/7.68.0,,,,ben-2442,benign,benign
+2025-10-01T11:25:37,192.168.29.104,44124,192.168.50.14,3306,TCP,424,,,,POST,,Mozilla/5.0,,,,ben-4073,benign,benign
+2025-10-01T11:25:40,172.16.17.71,18525,192.168.50.10,22,TCP,1379,A,,,POST,,python-requests/2.31.0,,,,ben-8941,benign,benign
+2025-10-01T11:42:34,190.214.64.251,7132,192.168.50.11,3389,RDP,32793,A,SIG_EXE_DL,Executable file download observed (suspicious) -- transfer of binary-like payload observed,POST,/upload,Mozilla/5.0 (compatible),,,,attk-0005,malware_delivery,attack
+2025-10-01T11:54:50,172.16.38.164,65265,192.168.50.13,8080,HTTP,1024,A,,,POST,/home,curl/7.68.0,,,,ben-4122,benign,benign
+2025-10-01T12:07:54,10.0.23.178,51662,192.168.50.10,3306,HTTP,1327,P,,,POST,/api,Mozilla/5.0,,,,ben-5634,benign,benign
+2025-10-01T12:22:39,192.168.15.171,36320,192.168.50.11,8080,HTTP,1217,P,,,POST,,curl/7.68.0,,,,ben-6272,benign,benign
+2025-10-01T12:23:25,172.16.6.139,3884,192.168.50.11,53,HTTP,342,,,,POST,,curl/7.68.0,,,,ben-3492,benign,benign
+2025-10-01T12:27:51,10.0.37.203,58020,192.168.50.14,80,HTTP,503,P,,,GET,,Mozilla/5.0,,,,ben-3361,benign,benign
+2025-10-01T12:29:05,172.16.14.28,41869,192.168.50.12,25,HTTP,1288,P,,,,/,curl/7.68.0,,,,ben-9742,benign,benign
+2025-10-01T12:48:58,192.168.29.104,41489,192.168.50.14,80,TCP,1206,A,,,,/api,Mozilla/5.0,,,,ben-2480,benign,benign
+2025-10-01T12:58:44,192.168.38.136,46506,192.168.50.13,53,TCP,827,A,,,GET,/api,Mozilla/5.0,,,,ben-5806,benign,benign
+2025-10-01T13:02:45,10.0.14.150,38112,192.168.50.14,25,HTTP,910,A,,,GET,/home,Mozilla/5.0,,,,ben-7267,benign,benign
+2025-10-01T13:03:25,172.16.6.139,31245,192.168.50.11,25,TCP,1606,P,,,POST,/api,python-requests/2.31.0,,,,ben-1153,benign,benign
+2025-10-01T13:07:08,10.0.6.119,29973,192.168.50.11,53,TCP,485,,,,POST,,python-requests/2.31.0,,,,ben-5097,benign,benign
+2025-10-01T13:11:04,172.16.2.200,16569,192.168.50.13,8080,TCP,1168,,,,POST,/api,python-requests/2.31.0,,,,ben-5837,benign,benign
+2025-10-01T13:24:09,58.36.86.222,60702,192.168.50.12,443,TCP,77024,A,SIG_EXE_DL,Executable file download observed (suspicious) -- transfer of binary-like payload observed,POST,/upload,Mozilla/5.0 (compatible),,,,attk-0007,malware_delivery,attack
+2025-10-01T13:34:18,172.16.5.12,45441,192.168.50.14,3306,HTTP,718,,,,,/home,python-requests/2.31.0,,,,ben-2591,benign,benign
+2025-10-01T13:56:07,10.0.37.203,24935,192.168.50.10,25,UDP,709,A,,,GET,/api,curl/7.68.0,,,,ben-7807,benign,benign
+2025-10-01T14:02:31,7.103.26.209,35813,192.168.50.14,22,SSH,873,F,SIG_CMD_INJECT,"Command injection pattern in URL or payload || example payload fragment: ""' OR '1'='1'""",POST,/admin?q=' OR '1'='1',curl/7.68.0,,,,attk-0008,exploit_attempt,attack
+2025-10-01T14:03:47,192.168.7.254,50448,192.168.50.10,443,TCP,1499,,,,,,python-requests/2.31.0,,,,ben-6992,benign,benign
+2025-10-01T14:16:17,58.36.86.222,45118,192.168.50.10,22,SSH,169391,F,SIG_EXE_DL,Executable file download observed (suspicious) -- transfer of binary-like payload observed,POST,/upload,Mozilla/5.0 (compatible),,,,attk-0007,malware_delivery,attack
+2025-10-01T14:30:35,190.214.64.251,22520,192.168.50.13,53,UDP,18571,P,SIG_EXFIL_HTTP,POST exfiltration to unknown domain with large payload -- transfer of binary-like payload observed,POST,/upload,Mozilla/5.0 (compatible),,,,attk-0009,data_exfiltration,attack
+2025-10-01T14:38:49,172.16.2.200,3995,192.168.50.10,80,TCP,1335,P,,,POST,/,Mozilla/5.0,,,,ben-4846,benign,benign
+2025-10-01T14:53:33,10.0.34.225,63242,192.168.50.12,25,UDP,1328,,,,,,python-requests/2.31.0,,,,ben-3531,benign,benign
+2025-10-01T15:00:22,192.168.38.136,46262,192.168.50.12,53,TCP,1623,A,,,POST,,Mozilla/5.0,,,,ben-6942,benign,benign
+2025-10-01T15:07:46,63.177.59.144,4992,192.168.50.14,22,SSH,700,A,SIG_HTTP_SQLI,"HTTP payload includes SQLi pattern: ' OR '1'='1 || example payload fragment: ""' OR '1'='1'""",POST,/?q=' OR '1'='1',sqlmap/1.6,,,,attk-0010,exploit_attempt,attack
+2025-10-01T15:13:20,10.0.29.150,9276,192.168.50.12,3306,TCP,852,,,,GET,/,python-requests/2.31.0,,,,ben-4394,benign,benign
+2025-10-01T15:13:36,10.0.13.200,19195,192.168.50.14,3306,TCP,1249,A,,,GET,/api,Mozilla/5.0,,,,ben-2801,benign,benign
+2025-10-01T15:14:44,192.168.34.232,39615,192.168.50.12,53,TCP,653,A,,,GET,/api,Mozilla/5.0,,,,ben-3076,benign,benign
+2025-10-01T15:15:04,172.16.13.105,52012,192.168.50.13,53,HTTP,1034,,,,,/,curl/7.68.0,,,,ben-9254,benign,benign
+2025-10-01T15:25:11,172.16.17.71,43185,192.168.50.12,80,HTTP,761,A,,,POST,,curl/7.68.0,,,,ben-2768,benign,benign
+2025-10-01T15:28:57,172.16.5.28,10745,192.168.50.12,80,UDP,898,A,,,POST,/api,curl/7.68.0,,,,ben-9692,benign,benign
+2025-10-01T15:36:03,10.0.23.178,8522,192.168.50.10,3306,UDP,1197,,,,,/home,curl/7.68.0,,,,ben-8398,benign,benign
+2025-10-01T15:59:52,192.168.4.116,48839,192.168.50.13,80,HTTP,349,P,,,POST,/api,python-requests/2.31.0,,,,ben-5176,benign,benign
+2025-10-01T16:02:44,172.16.14.28,55535,192.168.50.10,80,TCP,2095,A,,,POST,/,python-requests/2.31.0,,,,ben-7105,benign,benign
+2025-10-01T16:08:01,192.168.4.146,22627,192.168.50.14,25,UDP,236,A,,,POST,/api,python-requests/2.31.0,,,,ben-7929,benign,benign
+2025-10-01T16:22:06,172.16.2.9,7813,192.168.50.12,22,HTTP,111,,,,GET,/home,python-requests/2.31.0,,,,ben-8900,benign,benign
+2025-10-01T16:24:42,192.168.38.136,51002,192.168.50.12,53,TCP,1534,,,,GET,,python-requests/2.31.0,,,,ben-1430,benign,benign
+2025-10-01T16:25:30,10.0.22.250,50989,192.168.50.12,53,UDP,1314,P,,,POST,/,Mozilla/5.0,,,,ben-3347,benign,benign
+2025-10-01T16:28:56,192.168.12.79,64712,10.0.9.21,80,UDP,1214,A,,,,/home,curl/7.68.0,,,,ben-7878,benign,benign
+2025-10-01T16:30:41,172.16.37.183,51934,172.16.19.242,22,HTTP,1217,,,,GET,/,Mozilla/5.0,,,,ben-3579,benign,benign
+2025-10-01T16:57:14,172.16.2.9,44404,192.168.50.12,8080,HTTP,832,P,,,,,curl/7.68.0,,,,ben-5475,benign,benign
+2025-10-01T17:13:45,10.0.23.178,19586,192.168.50.13,25,TCP,301,,,,,,python-requests/2.31.0,,,,ben-6053,benign,benign
+2025-10-01T17:23:47,58.36.86.222,51313,192.168.50.14,80,HTTP,207,P,SIG_SSH_BRUTE,ssh auth failure,,,,root,failed,,attk-0007,brute_force,attack
+2025-10-01T17:44:18,172.16.0.107,16104,192.168.50.14,22,UDP,885,,,,,/api,Mozilla/5.0,,,,ben-7505,benign,benign
+2025-10-01T18:00:34,10.0.37.203,57523,192.168.50.13,53,TCP,433,,,,POST,,python-requests/2.31.0,,,,ben-7843,benign,benign
+2025-10-01T18:02:38,192.168.12.79,31176,192.168.50.11,3306,UDP,1425,,,,POST,/,curl/7.68.0,,,,ben-2734,benign,benign
+2025-10-01T18:24:57,192.168.15.171,58074,192.168.50.10,53,HTTP,751,,,,POST,/home,curl/7.68.0,,,,ben-3754,benign,benign
+2025-10-01T18:32:42,29.128.49.127,24033,192.168.50.14,22,SSH,58,F,SIG_SCAN_TCP_SYN,,,,,,,,attk-0011,scan,attack
+2025-10-01T18:49:10,10.0.29.150,33406,192.168.50.11,8080,UDP,344,,,,,,python-requests/2.31.0,,,,ben-6295,benign,benign
+2025-10-01T19:11:49,192.168.29.104,30004,192.168.50.10,25,HTTP,647,P,,,POST,/,curl/7.68.0,,,,ben-9312,benign,benign
+2025-10-01T19:15:38,36.184.193.233,55530,192.168.50.13,22,SSH,25670,,SIG_EXFIL_HTTP,POST exfiltration to unknown domain with large payload -- transfer of binary-like payload observed,POST,/upload,Mozilla/5.0 (compatible),,,,attk-0012,data_exfiltration,attack
+2025-10-01T19:16:48,192.168.23.38,59736,192.168.50.14,80,UDP,1087,P,,,,/home,curl/7.68.0,,,,ben-8792,benign,benign
+2025-10-01T19:19:24,172.16.2.9,6550,192.168.50.12,22,UDP,501,,,,GET,/,Mozilla/5.0,,,,ben-8172,benign,benign
+2025-10-01T19:24:58,172.16.13.105,25459,192.168.50.11,53,HTTP,346,P,,,POST,/api,python-requests/2.31.0,,,,ben-1857,benign,benign
+2025-10-01T19:42:00,192.168.7.254,45482,192.168.50.10,8080,UDP,986,P,,,POST,/home,curl/7.68.0,,,,ben-2335,benign,benign
+2025-10-01T20:01:43,172.16.14.28,44417,172.16.19.219,8080,UDP,986,A,,,,/,curl/7.68.0,,,,ben-7171,benign,benign
+2025-10-01T20:01:47,192.168.7.254,44963,192.168.50.10,8080,UDP,535,,,,POST,/,curl/7.68.0,,,,ben-6060,benign,benign
+2025-10-01T20:08:56,172.16.17.201,10039,192.168.50.11,443,TCP,557,A,,,POST,/,python-requests/2.31.0,,,,ben-9843,benign,benign
+2025-10-01T20:14:20,172.16.13.105,40165,192.168.50.14,8080,TCP,979,A,,,GET,/home,python-requests/2.31.0,,,,ben-3712,benign,benign
+2025-10-01T20:16:51,10.0.37.203,16590,172.16.23.81,8080,UDP,108,,,,POST,,Mozilla/5.0,,,,ben-9749,benign,benign
+2025-10-01T20:18:07,172.16.17.203,29898,10.0.23.139,8080,UDP,84,P,,,POST,,Mozilla/5.0,,,,ben-4271,benign,benign
+2025-10-01T20:22:15,10.0.34.225,58310,172.16.3.87,53,HTTP,408,,,,GET,/,curl/7.68.0,,,,ben-2374,benign,benign
+2025-10-01T20:50:52,10.0.22.250,7034,192.168.50.11,443,HTTP,711,P,,,POST,/,curl/7.68.0,,,,ben-1872,benign,benign
+2025-10-01T20:54:47,192.168.18.196,15739,192.168.50.10,80,HTTP,1026,P,,,GET,/api,Mozilla/5.0,,,,ben-3254,benign,benign
+2025-10-01T21:02:06,36.184.193.233,30423,192.168.50.11,3389,RDP,42,F,SIG_SCAN_TCP_SYN,,,,,,,,attk-0013,scan,attack
+2025-10-01T21:14:14,172.16.14.28,8310,192.168.50.14,3306,HTTP,1725,P,,,GET,/api,Mozilla/5.0,,,,ben-1782,benign,benign
+2025-10-01T21:18:45,172.16.17.71,40131,192.168.50.10,22,HTTP,1354,A,,,,/home,python-requests/2.31.0,,,,ben-3352,benign,benign
+2025-10-01T21:54:26,192.168.6.144,28324,192.168.50.11,443,UDP,744,,,,,/,python-requests/2.31.0,,,,ben-6908,benign,benign
+2025-10-01T22:27:15,164.177.121.157,42683,192.168.50.13,80,TCP,48,F,SIG_SSH_BRUTE,ssh auth failure,,,,user,failed,,attk-0014,brute_force,attack
+2025-10-01T22:30:09,192.168.38.136,24112,192.168.50.11,22,TCP,828,P,,,,/home,python-requests/2.31.0,,,,ben-8612,benign,benign
+2025-10-01T22:37:02,172.16.17.203,47950,192.168.50.11,3306,TCP,238,P,,,GET,/api,Mozilla/5.0,,,,ben-1717,benign,benign
+2025-10-01T22:40:36,10.0.37.203,54462,192.168.50.14,22,HTTP,828,P,,,POST,/,python-requests/2.31.0,,,,ben-4131,benign,benign
+2025-10-01T22:43:58,172.16.2.9,53409,192.168.50.12,53,TCP,666,P,,,POST,,curl/7.68.0,,,,ben-6554,benign,benign
+2025-10-01T22:44:20,172.16.23.90,18503,192.168.50.12,3306,UDP,1033,A,,,,,Mozilla/5.0,,,,ben-8055,benign,benign
+2025-10-01T22:53:44,172.16.0.107,6271,192.168.50.12,53,TCP,343,,,,POST,/api,curl/7.68.0,,,,ben-7981,benign,benign
+2025-10-01T23:00:44,36.184.193.233,41318,192.168.50.12,22,SSH,17036,S,SIG_EXFIL_HTTP,POST exfiltration to unknown domain with large payload -- transfer of binary-like payload observed,POST,/upload,Mozilla/5.0 (compatible),,,,attk-0015,data_exfiltration,attack
+2025-10-01T23:01:15,192.168.12.79,11508,172.16.32.215,80,UDP,1151,A,,,,,Mozilla/5.0,,,,ben-3068,benign,benign
+2025-10-01T23:04:31,63.177.59.144,11079,192.168.50.12,123,UDP,267,,SIG_SSH_BRUTE,ssh auth failure,,,,root,failed,,attk-0010,brute_force,attack
+2025-10-01T23:28:25,192.168.29.104,2722,192.168.50.11,25,TCP,1759,A,,,POST,,python-requests/2.31.0,,,,ben-2929,benign,benign
+2025-10-01T23:31:09,10.0.24.81,19739,192.168.50.11,25,UDP,774,P,,,GET,/,Mozilla/5.0,,,,ben-2213,benign,benign
+2025-10-01T23:32:43,172.16.5.28,47524,10.0.20.117,80,HTTP,1081,,,,,/api,curl/7.68.0,,,,ben-3580,benign,benign
+2025-10-01T23:39:26,172.16.0.107,14195,192.168.50.11,3306,TCP,1254,A,,,GET,,Mozilla/5.0,,,,ben-6912,benign,benign
+2025-10-02T00:21:53,192.168.18.196,58973,192.168.50.11,80,UDP,599,A,,,POST,,python-requests/2.31.0,,,,ben-8842,benign,benign
+2025-10-02T00:24:39,192.168.4.116,43120,192.168.50.11,80,HTTP,974,P,,,POST,/api,Mozilla/5.0,,,,ben-3981,benign,benign
+2025-10-02T00:35:48,10.0.34.225,34978,192.168.50.10,443,TCP,847,P,,,GET,/home,curl/7.68.0,,,,ben-4694,benign,benign
+2025-10-02T00:50:08,172.16.13.105,42643,192.168.50.12,22,TCP,898,P,,,GET,/api,python-requests/2.31.0,,,,ben-9740,benign,benign
+2025-10-02T00:52:51,7.103.26.209,12243,192.168.50.14,80,HTTP,791,,SIG_RDP_BRUTE,RDP auth failure sequence,,,,,,,attk-0016,other_malicious,attack
+2025-10-02T01:05:53,164.177.121.157,18368,192.168.50.10,161,UDP,164033,S,SIG_EXE_DL,Executable file download observed (suspicious) -- transfer of binary-like payload observed,POST,/upload,Mozilla/5.0 (compatible),,,,attk-0017,malware_delivery,attack
+2025-10-02T01:10:28,192.168.17.23,53760,192.168.50.13,3306,TCP,376,,,,POST,/api,curl/7.68.0,,,,ben-2195,benign,benign
+2025-10-02T01:20:28,172.16.37.183,14394,192.168.50.13,53,HTTP,854,,,,GET,/api,python-requests/2.31.0,,,,ben-6231,benign,benign
+2025-10-02T01:30:30,172.16.5.12,37832,192.168.50.12,80,UDP,1138,P,,,GET,,Mozilla/5.0,,,,ben-5382,benign,benign
+2025-10-02T01:38:11,172.16.14.28,57657,192.168.50.12,22,HTTP,1710,P,,,GET,/home,curl/7.68.0,,,,ben-6123,benign,benign
+2025-10-02T01:39:08,172.16.37.183,58635,192.168.50.13,53,HTTP,1415,P,,,GET,/,curl/7.68.0,,,,ben-9281,benign,benign
+2025-10-02T01:57:10,172.16.6.139,4336,192.168.50.12,53,TCP,2131,P,,,,,curl/7.68.0,,,,ben-9793,benign,benign
+2025-10-02T02:01:02,29.128.49.127,51084,192.168.50.13,22,SSH,91,S,SIG_SCAN_TCP_SYN,,,,,,,,attk-0011,scan,attack
+2025-10-02T02:03:06,10.0.27.13,26343,192.168.50.12,22,TCP,379,P,,,,/api,python-requests/2.31.0,,,,ben-2946,benign,benign
+2025-10-02T02:03:31,29.128.49.127,62558,192.168.50.13,53,UDP,2667,S,SIG_HTTP_SQLI,"HTTP payload includes SQLi pattern: ' OR '1'='1 || example payload fragment: ""' OR '1'='1'""",POST,/download?q=' OR '1'='1',Mozilla/5.0,,,,attk-0018,exploit_attempt,attack
+2025-10-02T02:12:27,63.177.59.144,10184,192.168.50.13,161,UDP,123,,SIG_SSH_BRUTE,ssh auth failure,,,,ubuntu,failed,,attk-0010,brute_force,attack
+2025-10-02T02:23:46,10.0.23.178,20671,192.168.31.90,8080,UDP,1363,A,,,POST,/api,python-requests/2.31.0,,,,ben-2795,benign,benign
+2025-10-02T02:23:56,192.168.15.171,18425,192.168.50.14,25,HTTP,950,,,,,/home,python-requests/2.31.0,,,,ben-1841,benign,benign
+2025-10-02T02:31:07,172.16.37.183,16896,192.168.50.11,80,UDP,2153,,,,,/,Mozilla/5.0,,,,ben-1310,benign,benign
+2025-10-02T02:33:41,192.168.4.116,27918,10.0.26.110,22,TCP,355,,,,POST,/,python-requests/2.31.0,,,,ben-3262,benign,benign
+2025-10-02T02:44:03,192.168.4.146,21586,192.168.50.14,443,HTTP,336,P,,,,/api,python-requests/2.31.0,,,,ben-6804,benign,benign
+2025-10-02T02:45:58,10.0.24.81,19308,192.168.50.11,22,TCP,480,P,,,GET,/api,curl/7.68.0,,,,ben-4396,benign,benign
+2025-10-02T02:57:42,172.16.23.90,62214,192.168.50.12,3306,UDP,514,,,,POST,/api,Mozilla/5.0,,,,ben-9899,benign,benign
+2025-10-02T03:02:35,192.168.12.79,19874,192.168.50.12,25,TCP,524,A,,,POST,,python-requests/2.31.0,,,,ben-5201,benign,benign
+2025-10-02T03:30:12,172.16.17.201,46648,192.168.50.12,53,UDP,384,A,,,GET,/home,Mozilla/5.0,,,,ben-1831,benign,benign
+2025-10-02T03:31:40,172.16.13.105,28110,192.168.50.10,53,TCP,930,,,,POST,/,python-requests/2.31.0,,,,ben-3252,benign,benign
+2025-10-02T03:35:51,7.103.26.209,32314,192.168.50.13,3389,RDP,186,,SIG_SSH_BRUTE,ssh auth failure,,,,root,failed,,attk-0019,brute_force,attack
+2025-10-02T03:37:03,10.0.37.203,55825,192.168.50.11,8080,TCP,1045,P,,,GET,/api,Mozilla/5.0,,,,ben-1151,benign,benign
+2025-10-02T04:02:55,10.0.29.150,43053,192.168.50.12,22,HTTP,1965,,,,POST,/home,python-requests/2.31.0,,,,ben-8668,benign,benign
+2025-10-02T04:23:54,10.0.35.236,43510,172.16.10.103,53,HTTP,1410,,,,GET,/,python-requests/2.31.0,,,,ben-6523,benign,benign
+2025-10-02T04:26:53,192.168.10.244,57132,192.168.50.11,25,UDP,493,P,,,POST,/api,Mozilla/5.0,,,,ben-7567,benign,benign
+2025-10-02T04:37:40,172.16.0.107,1471,192.168.50.12,53,TCP,300,P,,,GET,,curl/7.68.0,,,,ben-6400,benign,benign
+2025-10-02T04:54:40,192.168.10.244,46425,10.0.16.190,443,HTTP,1135,A,,,,/,curl/7.68.0,,,,ben-6026,benign,benign
+2025-10-02T05:02:46,71.104.82.87,25111,192.168.50.10,22,SSH,747,,SIG_HTTP_SQLI,"HTTP payload includes SQLi pattern: ' OR '1'='1 || example payload fragment: ""' OR '1'='1'""",POST,/login?q=' OR '1'='1',curl/7.68.0,,,,attk-0020,exploit_attempt,attack
+2025-10-02T05:10:18,192.168.4.146,50953,172.16.34.103,443,TCP,47,,,,,/,python-requests/2.31.0,,,,ben-8319,benign,benign
+2025-10-02T05:13:04,192.168.18.196,55338,192.168.50.10,22,TCP,1938,,,,GET,/home,Mozilla/5.0,,,,ben-6375,benign,benign
+2025-10-02T05:14:03,172.16.5.28,33059,10.0.13.38,80,UDP,1547,,,,POST,/,curl/7.68.0,,,,ben-3161,benign,benign
+2025-10-02T05:36:48,10.0.6.119,45114,192.168.50.14,3306,HTTP,558,P,,,,/,curl/7.68.0,,,,ben-5169,benign,benign
+2025-10-02T05:59:52,172.16.17.201,23603,192.168.50.10,25,HTTP,267,A,,,,/,Mozilla/5.0,,,,ben-8734,benign,benign
+2025-10-02T06:09:54,58.36.86.222,25564,192.168.50.11,3389,RDP,1746,,SIG_CMD_INJECT,"Command injection pattern in URL or payload || example payload fragment: ""' OR '1'='1'""",POST,/?q=' OR '1'='1',sqlmap/1.6,,,,attk-0021,exploit_attempt,attack
+2025-10-02T06:14:02,63.177.59.144,9369,192.168.50.10,53,UDP,293,,SIG_CMD_INJECT,"Command injection pattern in URL or payload || example payload fragment: ""' OR '1'='1'""",POST,/search?q=' OR '1'='1',sqlmap/1.6,,,,attk-0010,exploit_attempt,attack
+2025-10-02T06:18:20,192.168.23.38,11190,192.168.50.13,53,HTTP,1652,A,,,,/,Mozilla/5.0,,,,ben-7868,benign,benign
+2025-10-02T06:31:17,192.168.34.232,39948,192.168.50.10,80,TCP,771,P,,,,/,Mozilla/5.0,,,,ben-1724,benign,benign
+2025-10-02T06:54:01,10.0.13.200,34047,192.168.50.10,53,TCP,1582,A,,,,/api,python-requests/2.31.0,,,,ben-6253,benign,benign
+2025-10-02T07:15:50,172.16.14.28,20717,192.168.50.11,53,HTTP,196,A,,,,/home,python-requests/2.31.0,,,,ben-7999,benign,benign
+2025-10-02T07:30:58,172.16.2.9,46657,192.168.50.14,8080,HTTP,480,P,,,GET,/api,curl/7.68.0,,,,ben-4012,benign,benign
+2025-10-02T07:41:14,172.16.17.203,10484,192.168.50.12,3306,UDP,843,P,,,GET,,curl/7.68.0,,,,ben-9683,benign,benign
+2025-10-02T07:42:07,190.214.64.251,56541,192.168.50.12,3389,RDP,490,S,SIG_RDP_BRUTE,RDP auth failure sequence,,,,,,,attk-0022,other_malicious,attack
+2025-10-02T07:43:53,10.0.29.150,53757,192.168.50.10,3306,TCP,868,,,,,/home,curl/7.68.0,,,,ben-4422,benign,benign
+2025-10-02T08:06:46,192.168.7.254,64074,192.168.50.11,25,TCP,569,A,,,,,Mozilla/5.0,,,,ben-4350,benign,benign
+2025-10-02T08:16:05,172.16.6.139,31580,192.168.50.12,22,HTTP,1213,,,,POST,/api,curl/7.68.0,,,,ben-6892,benign,benign
+2025-10-02T08:16:11,172.16.23.90,50938,172.16.6.80,3306,HTTP,199,P,,,GET,/api,curl/7.68.0,,,,ben-7781,benign,benign
+2025-10-02T08:17:15,190.214.64.251,38978,192.168.50.11,123,UDP,1003,,SIG_HTTP_SQLI,"HTTP payload includes SQLi pattern: ' OR '1'='1 || example payload fragment: ""' OR '1'='1'""",POST,/login?q=' OR '1'='1',curl/7.68.0,,,,attk-0022,exploit_attempt,attack
+2025-10-02T08:28:08,172.16.23.90,64365,192.168.50.12,25,HTTP,754,,,,,,curl/7.68.0,,,,ben-3756,benign,benign
+2025-10-02T08:28:11,172.16.5.12,33026,10.0.8.246,443,UDP,912,,,,,/,python-requests/2.31.0,,,,ben-1554,benign,benign
+2025-10-02T08:29:57,10.0.6.0,10034,192.168.50.10,3306,HTTP,1148,,,,GET,/,python-requests/2.31.0,,,,ben-3474,benign,benign
+2025-10-02T08:37:54,36.184.193.233,60842,192.168.50.12,161,UDP,6123,S,SIG_EXE_DL,Executable file download observed (suspicious) -- transfer of binary-like payload observed,POST,/upload,Mozilla/5.0 (compatible),,,,attk-0023,malware_delivery,attack
+2025-10-02T08:49:40,192.168.4.116,19029,192.168.50.14,22,UDP,1266,P,,,GET,,Mozilla/5.0,,,,ben-2753,benign,benign
+2025-10-02T09:00:14,172.16.13.105,35525,192.168.50.11,53,UDP,165,P,,,POST,,Mozilla/5.0,,,,ben-7112,benign,benign
+2025-10-02T09:02:46,10.0.6.119,20683,192.168.15.145,25,TCP,160,A,,,,/,Mozilla/5.0,,,,ben-7640,benign,benign
+2025-10-02T09:15:13,192.168.4.146,47085,172.16.3.152,443,TCP,1606,A,,,POST,,python-requests/2.31.0,,,,ben-6427,benign,benign
+2025-10-02T09:17:56,192.168.38.136,60089,192.168.50.11,3306,TCP,1039,,,,,,curl/7.68.0,,,,ben-1762,benign,benign
+2025-10-02T09:21:52,10.0.22.250,12778,192.168.36.17,3306,TCP,390,P,,,GET,/home,python-requests/2.31.0,,,,ben-3362,benign,benign
+2025-10-02T09:35:35,192.168.12.79,16783,192.168.50.11,22,UDP,1770,P,,,,/api,curl/7.68.0,,,,ben-3292,benign,benign
+2025-10-02T09:46:05,10.0.14.228,29669,192.168.50.10,443,TCP,909,A,,,POST,,curl/7.68.0,,,,ben-1485,benign,benign
+2025-10-02T10:05:00,172.16.5.28,62702,192.168.50.12,8080,UDP,1547,P,,,GET,,Mozilla/5.0,,,,ben-5839,benign,benign
+2025-10-02T10:15:43,10.0.6.0,47664,192.168.50.11,3306,HTTP,880,,,,GET,,curl/7.68.0,,,,ben-6909,benign,benign
+2025-10-02T10:24:07,164.177.121.157,9707,192.168.50.12,21,TCP,119661,,SIG_EXE_DL,Executable file download observed (suspicious) -- transfer of binary-like payload observed,POST,/upload,Mozilla/5.0 (compatible),,,,attk-0024,malware_delivery,attack
+2025-10-02T10:25:06,192.168.4.116,37345,192.168.50.10,80,HTTP,2076,,,,,/api,curl/7.68.0,,,,ben-1202,benign,benign
+2025-10-02T10:29:41,192.168.23.38,35175,192.168.50.11,443,UDP,1893,,,,POST,/home,Mozilla/5.0,,,,ben-5405,benign,benign
+2025-10-02T10:32:46,172.16.23.90,19109,192.168.50.11,8080,HTTP,690,P,,,POST,/,curl/7.68.0,,,,ben-5123,benign,benign
+2025-10-02T10:35:34,172.16.23.90,9903,192.168.50.13,53,TCP,1422,A,,,POST,/api,python-requests/2.31.0,,,,ben-7224,benign,benign
+2025-10-02T11:11:41,192.168.7.254,64870,192.168.50.13,22,UDP,1227,A,,,POST,/api,python-requests/2.31.0,,,,ben-4290,benign,benign
+2025-10-02T11:16:41,172.16.0.107,46568,192.168.50.12,25,UDP,1661,P,,,,/home,curl/7.68.0,,,,ben-7161,benign,benign
+2025-10-02T11:38:56,192.168.12.79,39836,192.168.50.14,22,TCP,261,A,,,,/,python-requests/2.31.0,,,,ben-8563,benign,benign
+2025-10-02T11:48:55,172.16.17.201,54695,172.16.18.166,3306,TCP,1251,P,,,,,Mozilla/5.0,,,,ben-5961,benign,benign
+2025-10-02T12:04:45,172.16.14.28,30454,192.168.50.13,22,TCP,1475,P,,,,,python-requests/2.31.0,,,,ben-9300,benign,benign
+2025-10-02T12:11:44,192.168.4.116,59711,192.168.50.12,3306,UDP,295,,,,,/,Mozilla/5.0,,,,ben-5067,benign,benign
+2025-10-02T12:20:20,172.16.5.12,45422,192.168.50.14,25,UDP,130,P,,,POST,,Mozilla/5.0,,,,ben-1172,benign,benign
+2025-10-02T12:27:07,190.214.64.251,39068,192.168.50.14,53,UDP,100073,P,SIG_EXE_DL,Executable file download observed (suspicious) -- transfer of binary-like payload observed,POST,/upload,Mozilla/5.0 (compatible),,,,attk-0025,malware_delivery,attack
+2025-10-02T12:29:18,192.168.15.171,2633,192.168.50.11,8080,HTTP,463,A,,,POST,,Mozilla/5.0,,,,ben-2901,benign,benign
+2025-10-02T12:42:07,172.16.14.28,52421,192.168.50.12,443,HTTP,678,,,,POST,/api,curl/7.68.0,,,,ben-2599,benign,benign
+2025-10-02T12:45:24,172.16.5.28,54120,192.168.50.12,25,TCP,1270,A,,,GET,/api,python-requests/2.31.0,,,,ben-2791,benign,benign
+2025-10-02T12:45:39,172.16.37.183,37193,192.168.50.14,443,TCP,1741,P,,,,,curl/7.68.0,,,,ben-4798,benign,benign
+2025-10-02T12:56:01,172.16.0.107,49349,192.168.50.13,22,TCP,884,A,,,POST,,curl/7.68.0,,,,ben-1072,benign,benign
+2025-10-02T12:57:58,172.16.17.201,53420,192.168.50.14,3306,TCP,1817,,,,GET,/api,curl/7.68.0,,,,ben-4228,benign,benign
+2025-10-02T13:26:11,10.0.24.81,21563,192.168.50.14,22,UDP,68,P,,,,,python-requests/2.31.0,,,,ben-2871,benign,benign
+2025-10-02T13:56:58,10.0.6.119,53492,192.168.11.11,53,UDP,262,,,,,/,python-requests/2.31.0,,,,ben-3194,benign,benign
+2025-10-02T14:21:36,172.16.6.139,46469,192.168.50.11,443,HTTP,806,,,,POST,,python-requests/2.31.0,,,,ben-3258,benign,benign
+2025-10-02T14:26:13,10.0.14.150,46468,10.0.31.38,25,UDP,1070,A,,,,/home,curl/7.68.0,,,,ben-5732,benign,benign
+2025-10-02T14:26:22,63.177.59.144,63403,192.168.50.13,22,SSH,999,P,SIG_HTTP_SQLI,"HTTP payload includes SQLi pattern: ' OR '1'='1 || example payload fragment: ""' OR '1'='1'""",POST,/download?q=' OR '1'='1',sqlmap/1.6,,,,attk-0026,exploit_attempt,attack
+2025-10-02T14:52:44,172.16.23.90,6441,192.168.50.13,22,TCP,820,A,,,GET,/api,Mozilla/5.0,,,,ben-5503,benign,benign
+2025-10-02T14:58:19,172.16.38.164,51653,192.168.50.14,3306,UDP,480,P,,,,/,python-requests/2.31.0,,,,ben-2871,benign,benign
+2025-10-02T15:32:20,192.168.17.23,29949,192.168.50.10,22,UDP,786,A,,,POST,/,python-requests/2.31.0,,,,ben-5055,benign,benign
+2025-10-02T16:05:28,10.0.37.203,29798,192.168.50.12,3306,TCP,57,A,,,GET,/home,python-requests/2.31.0,,,,ben-6744,benign,benign
+2025-10-02T16:24:38,172.16.17.71,10148,192.168.50.11,3306,UDP,1241,A,,,GET,/,python-requests/2.31.0,,,,ben-6747,benign,benign
+2025-10-02T16:28:07,10.0.29.150,20202,192.168.50.12,53,UDP,1059,,,,POST,/,Mozilla/5.0,,,,ben-7743,benign,benign
+2025-10-02T16:32:59,10.0.22.250,17386,192.168.8.31,443,TCP,276,,,,POST,/home,python-requests/2.31.0,,,,ben-7434,benign,benign
+2025-10-02T16:52:02,192.168.10.244,25611,192.168.17.51,8080,HTTP,531,A,,,,/,curl/7.68.0,,,,ben-9447,benign,benign
+2025-10-02T16:55:51,192.168.18.196,1186,192.168.50.12,3306,UDP,204,,,,GET,,python-requests/2.31.0,,,,ben-6869,benign,benign
+2025-10-02T16:57:42,192.168.17.23,33445,192.168.50.13,53,TCP,802,P,,,POST,/api,python-requests/2.31.0,,,,ben-3139,benign,benign
+2025-10-02T17:05:50,172.16.23.90,42061,192.168.50.10,3306,TCP,1413,P,,,GET,/,Mozilla/5.0,,,,ben-8230,benign,benign
+2025-10-02T17:33:21,10.0.14.150,11442,10.0.8.114,3306,HTTP,248,P,,,GET,/api,curl/7.68.0,,,,ben-2350,benign,benign
+2025-10-02T17:45:16,172.16.37.183,48602,10.0.25.94,25,HTTP,1142,A,,,POST,/,python-requests/2.31.0,,,,ben-2559,benign,benign
+2025-10-02T17:53:42,36.184.193.233,1632,192.168.50.10,3389,RDP,101,P,SIG_SSH_BRUTE,ssh auth failure,,,,ubuntu,failed,,attk-0023,brute_force,attack
+2025-10-02T17:54:44,58.36.86.222,7787,192.168.50.10,25,TCP,110,A,SIG_SSH_BRUTE,ssh auth failure,,,,ubuntu,failed,,attk-0027,brute_force,attack
+2025-10-02T18:04:16,164.177.121.157,24039,192.168.50.14,3389,RDP,41681,P,SIG_EXFIL_HTTP,POST exfiltration to unknown domain with large payload -- transfer of binary-like payload observed,POST,/upload,Mozilla/5.0 (compatible),,,,attk-0028,data_exfiltration,attack
+2025-10-02T18:50:23,172.16.5.28,50336,192.168.50.10,80,TCP,521,,,,,,curl/7.68.0,,,,ben-8035,benign,benign
+2025-10-02T18:51:53,10.0.34.225,17287,10.0.17.186,22,TCP,364,,,,,/api,python-requests/2.31.0,,,,ben-1439,benign,benign
+2025-10-02T18:59:11,172.16.2.200,13387,192.168.50.14,25,UDP,775,P,,,POST,/,Mozilla/5.0,,,,ben-9108,benign,benign
+2025-10-02T19:20:11,172.16.6.139,59267,192.168.50.10,80,UDP,218,P,,,POST,/home,curl/7.68.0,,,,ben-7895,benign,benign
+2025-10-02T19:33:41,172.16.0.107,5449,192.168.50.10,80,UDP,507,P,,,GET,/,Mozilla/5.0,,,,ben-7520,benign,benign
+2025-10-02T19:45:37,10.0.23.178,6425,172.16.27.28,25,HTTP,121,,,,,/home,curl/7.68.0,,,,ben-2369,benign,benign
+2025-10-02T19:57:44,10.0.23.178,26630,192.168.50.14,22,HTTP,2018,,,,,/,curl/7.68.0,,,,ben-8167,benign,benign
+2025-10-02T20:02:12,172.16.6.139,8625,192.168.50.10,8080,HTTP,861,,,,,/,curl/7.68.0,,,,ben-3877,benign,benign
+2025-10-02T20:05:40,7.103.26.209,34920,192.168.50.10,53,UDP,104,S,SIG_SSH_BRUTE,ssh auth failure,,,,user,failed,,attk-0029,brute_force,attack
+2025-10-02T20:22:15,10.0.14.150,47706,192.168.50.10,22,HTTP,420,,,,GET,,curl/7.68.0,,,,ben-9368,benign,benign
+2025-10-02T20:38:51,172.16.23.90,17743,192.168.50.12,3306,TCP,968,A,,,,/,Mozilla/5.0,,,,ben-9336,benign,benign
+2025-10-02T20:59:02,164.177.121.157,12752,192.168.50.11,80,HTTP,2885,A,SIG_CMD_INJECT,"Command injection pattern in URL or payload || example payload fragment: ""' OR '1'='1'""",POST,/login?q=' OR '1'='1',curl/7.68.0,,,,attk-0028,exploit_attempt,attack
+2025-10-02T21:23:29,192.168.29.104,8849,192.168.50.14,22,HTTP,772,,,,GET,/home,Mozilla/5.0,,,,ben-9450,benign,benign
+2025-10-02T21:30:39,192.168.12.79,22473,192.168.50.12,80,HTTP,707,,,,POST,/,curl/7.68.0,,,,ben-4287,benign,benign
+2025-10-02T21:37:36,172.16.2.200,39801,192.168.50.13,8080,HTTP,1208,A,,,,/home,Mozilla/5.0,,,,ben-1104,benign,benign
+2025-10-02T21:53:37,192.168.34.232,56046,192.168.50.12,25,UDP,1294,A,,,POST,/,python-requests/2.31.0,,,,ben-7164,benign,benign
+2025-10-02T22:04:07,172.16.2.200,28537,192.168.50.14,8080,TCP,521,A,,,GET,/api,Mozilla/5.0,,,,ben-1719,benign,benign
+2025-10-02T22:16:13,172.16.13.105,6588,192.168.50.13,22,UDP,494,A,,,,/home,python-requests/2.31.0,,,,ben-7461,benign,benign
+2025-10-02T22:32:06,164.177.121.157,16541,192.168.50.13,80,HTTP,1490,F,SIG_CMD_INJECT,"Command injection pattern in URL or payload || example payload fragment: ""' OR '1'='1'""",POST,/images?q=' OR '1'='1',sqlmap/1.6,,,,attk-0030,exploit_attempt,attack
+2025-10-02T22:54:11,10.0.22.250,52137,192.168.50.11,3306,TCP,674,,,,GET,/home,Mozilla/5.0,,,,ben-3693,benign,benign
+2025-10-02T22:58:18,192.168.29.104,64242,192.168.50.14,3306,HTTP,621,A,,,POST,/api,curl/7.68.0,,,,ben-5341,benign,benign
+2025-10-02T23:03:01,10.0.14.228,40562,10.0.19.121,80,UDP,149,A,,,POST,/home,Mozilla/5.0,,,,ben-5066,benign,benign
+2025-10-02T23:04:00,192.168.12.79,18074,192.168.3.35,3306,HTTP,1660,A,,,GET,,curl/7.68.0,,,,ben-5093,benign,benign
+2025-10-02T23:12:38,29.128.49.127,9590,192.168.50.11,80,HTTP,391,S,SIG_SSH_BRUTE,ssh auth failure,,,,root,failed,,attk-0018,brute_force,attack
+2025-10-02T23:13:00,29.128.49.127,54062,192.168.50.11,3389,RDP,1558,S,SIG_CMD_INJECT,"Command injection pattern in URL or payload || example payload fragment: ""' OR '1'='1'""",GET,/?q=' OR '1'='1',curl/7.68.0,,,,attk-0031,exploit_attempt,attack
+2025-10-02T23:19:16,58.36.86.222,12349,192.168.50.13,3389,RDP,1326,S,SIG_HTTP_SQLI,"HTTP payload includes SQLi pattern: ' OR '1'='1 || example payload fragment: ""' OR '1'='1'""",POST,/search?q=' OR '1'='1',Mozilla/5.0,,,,attk-0027,exploit_attempt,attack
+2025-10-02T23:27:05,172.16.17.71,58877,192.168.50.13,22,HTTP,1826,P,,,GET,/,curl/7.68.0,,,,ben-7275,benign,benign
+2025-10-02T23:30:28,190.214.64.251,53115,192.168.50.14,123,UDP,1670,F,SIG_CMD_INJECT,"Command injection pattern in URL or payload || example payload fragment: ""' OR '1'='1'""",POST,/download?q=' OR '1'='1',curl/7.68.0,,,,attk-0032,exploit_attempt,attack
+2025-10-02T23:39:24,10.0.23.178,2732,192.168.50.12,53,TCP,690,,,,GET,/,curl/7.68.0,,,,ben-1959,benign,benign
+2025-10-02T23:39:43,172.16.17.203,64854,192.168.50.14,443,TCP,1185,A,,,GET,/home,curl/7.68.0,,,,ben-9743,benign,benign
+2025-10-02T23:40:05,172.16.2.9,62313,192.168.50.13,3306,HTTP,1026,A,,,GET,/home,python-requests/2.31.0,,,,ben-6210,benign,benign
+2025-10-02T23:57:23,172.16.5.12,24071,192.168.1.207,22,UDP,2687,,,,GET,/home,curl/7.68.0,,,,ben-9882,benign,benign
+2025-10-03T00:01:51,172.16.23.90,40454,192.168.50.10,443,TCP,1511,A,,,,,Mozilla/5.0,,,,ben-6435,benign,benign
+2025-10-03T00:03:13,10.0.27.13,61237,10.0.21.207,3306,TCP,763,P,,,GET,/,Mozilla/5.0,,,,ben-3320,benign,benign
+2025-10-03T00:10:36,172.16.13.105,62753,192.168.50.12,25,UDP,266,P,,,,/,curl/7.68.0,,,,ben-5944,benign,benign
+2025-10-03T00:25:18,172.16.37.183,43568,192.168.27.246,53,HTTP,203,A,,,,/api,Mozilla/5.0,,,,ben-3872,benign,benign
+2025-10-03T00:27:43,172.16.38.164,63203,10.0.11.96,25,TCP,962,,,,POST,/,Mozilla/5.0,,,,ben-6213,benign,benign
+2025-10-03T00:37:29,172.16.17.71,10241,192.168.50.10,53,HTTP,386,,,,GET,/home,curl/7.68.0,,,,ben-6234,benign,benign
+2025-10-03T00:38:22,29.128.49.127,46451,192.168.50.12,80,HTTP,95,P,SIG_SSH_BRUTE,ssh auth failure,,,,root,failed,,attk-0031,brute_force,attack
