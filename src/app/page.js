@@ -11,6 +11,9 @@ import {
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell } from 'recharts';
 import { fetchCSVData, parseCSV } from '@/utils/csvParser';
 
+const ROWS_PER_PAGE = 10;
+const TIMELINE_ROWS_PER_PAGE = 5;
+
 // Data state variables
 
 export default function Dashboard() {
@@ -28,6 +31,8 @@ export default function Dashboard() {
   const [liveAttackFeed, setLiveAttackFeed] = useState([]);
   const [simHoneypotUltraDetailed, setSimHoneypotUltraDetailed] = useState([]);
   const [attackTimelineData, setAttackTimelineData] = useState([]);
+  const [timelinePage, setTimelinePage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
 
   // Extract unique attack types from CSV data
@@ -101,6 +106,15 @@ export default function Dashboard() {
   useEffect(() => {
     loadData();
   }, []);
+
+  // Reset pagination when filters or data change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedSeverity, selectedType, historicalData]);
+
+  useEffect(() => {
+    setTimelinePage(1);
+  }, [timelineSeverityFilter, timelineTypeFilter, attackTimelineData, simHoneypotUltraDetailed]);
 
   // Export all CSV files concatenated into a single download
   const exportAllCSV = async () => {
@@ -212,6 +226,41 @@ export default function Dashboard() {
 
     return severityMatches && typeMatches;
   });
+
+  const totalPages = Math.max(1, Math.ceil(filteredHistoricalData.length / ROWS_PER_PAGE));
+
+  const paginatedHistoricalData = useMemo(() => {
+    const startIndex = (currentPage - 1) * ROWS_PER_PAGE;
+    return filteredHistoricalData.slice(startIndex, startIndex + ROWS_PER_PAGE);
+  }, [filteredHistoricalData, currentPage]);
+
+  const paginationRangeStart = filteredHistoricalData.length === 0 ? 0 : (currentPage - 1) * ROWS_PER_PAGE + 1;
+  const paginationRangeEnd = filteredHistoricalData.length === 0 ? 0 : Math.min(currentPage * ROWS_PER_PAGE, filteredHistoricalData.length);
+
+  const filteredTimelineData = useMemo(() => {
+    const timelineData = attackTimelineData.length > 0 ? attackTimelineData : simHoneypotUltraDetailed.filter(row => row.label === 'attack');
+    return timelineData.filter(attack => {
+      const severity = attack.severity || (attack.label === 'attack' ? 'High' : 'Low');
+      const attackType = attack.attack_type || attack.event_type || '';
+      const severityMatches = severity === timelineSeverityFilter;
+      const typeMatches = timelineTypeFilter === 'All Types' || attackType === timelineTypeFilter;
+      return severityMatches && typeMatches;
+    });
+  }, [attackTimelineData, simHoneypotUltraDetailed, timelineSeverityFilter, timelineTypeFilter]);
+
+  const timelineTotalPages = Math.max(1, Math.ceil(filteredTimelineData.length / TIMELINE_ROWS_PER_PAGE));
+
+  useEffect(() => {
+    setTimelinePage((prev) => Math.min(prev, timelineTotalPages));
+  }, [timelineTotalPages]);
+
+  const paginatedTimelineData = useMemo(() => {
+    const startIndex = (timelinePage - 1) * TIMELINE_ROWS_PER_PAGE;
+    return filteredTimelineData.slice(startIndex, startIndex + TIMELINE_ROWS_PER_PAGE);
+  }, [filteredTimelineData, timelinePage]);
+
+  const timelineRangeStart = filteredTimelineData.length === 0 ? 0 : (timelinePage - 1) * TIMELINE_ROWS_PER_PAGE + 1;
+  const timelineRangeEnd = filteredTimelineData.length === 0 ? 0 : Math.min(timelinePage * TIMELINE_ROWS_PER_PAGE, filteredTimelineData.length);
 
   if (loading) {
     return (
@@ -467,8 +516,8 @@ export default function Dashboard() {
         <div className="bg-gray-800 rounded-lg p-6 mb-8">
           <div className="mb-6 flex items-center justify-between">
             <div>
-              <h3 className="text-lg font-semibold mb-2">Capture Attacker Behavior</h3>
-              <p className="text-gray-400 text-sm">Reconstruct attack paths with visual timelines.</p>
+              <h3 className="text-lg font-semibold mb-2">Attacker Behavior</h3>
+              <p className="text-gray-400 text-sm">Attack paths with visual timelines.</p>
             </div>
             <div className="flex items-center space-x-3">
               <FunnelIcon className="w-4 h-4 text-gray-400" />
@@ -499,33 +548,21 @@ export default function Dashboard() {
           
           {/* Attack Path Timeline */}
           <div className="space-y-4">
-            {(() => {
-              const timelineData = attackTimelineData.length > 0 ? attackTimelineData : simHoneypotUltraDetailed.filter(row => row.label === 'attack');
-              const filteredData = timelineData.filter(attack => {
-                const severity = attack.severity || (attack.label === 'attack' ? 'High' : 'Low');
-                const attackType = attack.attack_type || attack.event_type || '';
-                const severityMatches = severity === timelineSeverityFilter;
-                const typeMatches = timelineTypeFilter === 'All Types' || attackType === timelineTypeFilter;
-                return severityMatches && typeMatches;
-              });
-              
-              if (filteredData.length === 0) {
-                return (
-                  <div className="text-center py-8 text-gray-400">
-                    <p>
-                      No {timelineSeverityFilter} severity 
-                      {timelineTypeFilter !== 'All Types' && ` ${timelineTypeFilter}`} 
-                      {' '}attacks available for timeline reconstruction
-                    </p>
-                  </div>
-                );
-              }
-              
-              return filteredData.slice(0, 5).map((attack, index, array) => {
+            {filteredTimelineData.length === 0 ? (
+              <div className="text-center py-8 text-gray-400">
+                <p>
+                  No {timelineSeverityFilter} severity
+                  {timelineTypeFilter !== 'All Types' && ` ${timelineTypeFilter}`}
+                  {' '}attacks available for timeline reconstruction
+                </p>
+              </div>
+            ) : (
+              paginatedTimelineData.map((attack, index) => {
                 const attackTime = attack.timestamp ? new Date(attack.timestamp) : new Date();
                 const severity = attack.severity || (attack.label === 'attack' ? 'High' : 'Low');
+                const isLastItem = index === paginatedTimelineData.length - 1;
                 return (
-                  <div key={index} className="bg-gray-700 rounded-lg p-4">
+                  <div key={`${attack.timestamp || attack.id || index}-${timelinePage}`} className="bg-gray-700 rounded-lg p-4">
                     <div className="flex items-start space-x-4">
                       {/* Timeline line */}
                       <div className="flex flex-col items-center">
@@ -535,7 +572,7 @@ export default function Dashboard() {
                           severity === 'Medium' ? 'bg-yellow-500' :
                           'bg-gray-400'
                         }`}></div>
-                        {index < array.length - 1 && <div className="w-0.5 h-full bg-gray-600 mt-2 min-h-[60px]"></div>}
+                        {!isLastItem && <div className="w-0.5 h-full bg-gray-600 mt-2 min-h-[60px]"></div>}
                       </div>
                       
                       {/* Attack details */}
@@ -607,8 +644,34 @@ export default function Dashboard() {
                     </div>
                   </div>
                 );
-              });
-            })()}
+              })
+            )}
+          </div>
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between mt-6 space-y-4 md:space-y-0">
+            <p className="text-sm text-gray-400">
+              {filteredTimelineData.length === 0
+                ? 'No attacks to display'
+                : `Showing ${timelineRangeStart}-${timelineRangeEnd} of ${filteredTimelineData.length} attacks`}
+            </p>
+            <div className="flex items-center space-x-2">
+              <button
+                onClick={() => setTimelinePage((prev) => Math.max(prev - 1, 1))}
+                disabled={timelinePage === 1 || filteredTimelineData.length === 0}
+                className="px-3 py-1 rounded-lg bg-gray-700 text-sm disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-600 transition-colors"
+              >
+                Previous
+              </button>
+              <span className="text-sm text-gray-400">
+                Page {filteredTimelineData.length === 0 ? 0 : timelinePage} of {filteredTimelineData.length === 0 ? 0 : timelineTotalPages}
+              </span>
+              <button
+                onClick={() => setTimelinePage((prev) => Math.min(prev + 1, timelineTotalPages))}
+                disabled={timelinePage === timelineTotalPages || filteredTimelineData.length === 0}
+                className="px-3 py-1 rounded-lg bg-gray-700 text-sm disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-600 transition-colors"
+              >
+                Next
+              </button>
+            </div>
           </div>
         </div>
 
@@ -667,7 +730,7 @@ export default function Dashboard() {
                     <td colSpan={9} className="py-6 px-4 text-center text-gray-400">No historical records match the selected filters.</td>
                   </tr>
                 ) : (
-                  filteredHistoricalData.map((row, index) => (
+                  paginatedHistoricalData.map((row, index) => (
                     <tr key={index} className="border-b border-gray-700 hover:bg-gray-700/50">
                       <td className="py-3 px-4 text-sm">{row.timestamp}</td>
                       <td className="py-3 px-4 text-sm">
@@ -705,6 +768,32 @@ export default function Dashboard() {
                 )}
               </tbody>
             </table>
+          </div>
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between mt-4 space-y-4 md:space-y-0">
+            <p className="text-sm text-gray-400">
+              {filteredHistoricalData.length === 0
+                ? 'No records to display'
+                : `Showing ${paginationRangeStart}-${paginationRangeEnd} of ${filteredHistoricalData.length} records`}
+            </p>
+            <div className="flex items-center space-x-2">
+              <button
+                onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                disabled={currentPage === 1 || filteredHistoricalData.length === 0}
+                className="px-3 py-1 rounded-lg bg-gray-700 text-sm disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-600 transition-colors"
+              >
+                Previous
+              </button>
+              <span className="text-sm text-gray-400">
+                Page {filteredHistoricalData.length === 0 ? 0 : currentPage} of {filteredHistoricalData.length === 0 ? 0 : totalPages}
+              </span>
+              <button
+                onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+                disabled={currentPage === totalPages || filteredHistoricalData.length === 0}
+                className="px-3 py-1 rounded-lg bg-gray-700 text-sm disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-600 transition-colors"
+              >
+                Next
+              </button>
+            </div>
           </div>
         </div>
 
